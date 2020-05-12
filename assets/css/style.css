@@ -314,10 +314,11 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  text-align: center;
   color: #425BB5;
 }
 
-.section-title h2::after {
+/* .section-title h2::after {
   content: '';
   position: absolute;
   display: block;
@@ -326,7 +327,7 @@ section {
   background: #425BB5;
   bottom: 0;
   left: 0;
-}
+} */
 
 .section-title p {
   margin-bottom: 0;
@@ -364,7 +365,7 @@ section {
 # Facts
 --------------------------------------------------------------*/
 .facts {
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .facts .count-box {
@@ -376,7 +377,8 @@ section {
   display: block;
   font-size: 44px;
   color: #425BB5;
-  float: left;
+  /* float: left; */
+  text-align: center;
 }
 
 .facts .count-box span {
@@ -385,13 +387,14 @@ section {
   display: block;
   font-weight: 700;
   color: #050d18;
-  margin-left: 60px;
+  margin-top: 24px;
+  text-align: center;
 }
 
 .facts .count-box p {
   padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
+  /* margin: 0 0 0 60px; */
+  text-align: center;
   font-size: 14px;
   color: #122f57;
 }
@@ -1044,41 +1047,6 @@ section {
 
 
 
-/* Skills */
-
-.skills-icon {
-  font-size: 5em;
-  color: #ffe400;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-have-an-idea:before {
-  content: "\e900";
-}
-
-.icon-web-development-2:before {
-  content: "\e903";
-}
-
-.icon-computer-monitor-and-cellphone:before {
-  content: "\e902";
-}
-
-.icon-code-design:before {
-  content: "\e903";
-}
-
 /* Footer */
 
 .bg-yellow {
@@ -1144,4 +1112,53 @@ section {
 p {
     margin: 0 0 35px;
 }
+}
+
+
+
+/* Skills Slider */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 200px;
+  padding-top: 60px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 1110px;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
 }
